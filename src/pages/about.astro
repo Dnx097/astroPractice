@@ -10,11 +10,27 @@ console.log(data);
 
 <Layout title="Pagina About">
   <main>
-    <h1>Pagina about</h1>
+    <h1 onclick="" id="h1">Pagina about</h1>
     {
-      data.map((dta) => (
-        <Card body={dta.body} title={dta.title} href="www.google.com" />
-      ))
+      data.map((dta) =>
+        dta.userId == 1 ? (
+          <Card body={dta.body} title={dta.title} href="www.google.com" />
+        ) : (
+          ""
+        )
+      )
     }
   </main>
 </Layout>
+
+<script>
+  function some() {
+    console.log("algo");
+  }
+</script>
+<!-- <script>
+  const h1 = document.getElementById("h1");
+  h1.addEventListener("click", () => {
+    console.log("algo");
+  });
+</script> -->
