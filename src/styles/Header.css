@@ -1,0 +1,75 @@
+.header_cont {
+    padding: .5rem .6rem;
+    background-color: #e7e7e7;
+    border-bottom: solid 1px #444444;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+
+}
+
+.rcm_logo_container {
+    margin: 0;
+}
+
+.header_nav_icon {}
+
+.hide_close_icon {}
+
+.header_nav_icon .rcm_nav {
+    display: none;
+}
+
+.header_nav_icon.active .rcm_nav {
+    background-color: #444444;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    display: block;
+    animation: nav .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    z-index: 100;
+}
+
+
+.nav_ul {
+    margin: 0;
+    padding: 1rem .3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nal_li {
+    background-color: #313131;
+    width: 80%;
+    text-align: center;
+    border-radius: 5px;
+    border: solid 1px #539e49;
+    box-shadow: 0px 4px 5px 1px rgba(110, 110, 110, 3);
+
+}
+
+.nav_page {
+    display: inline-block;
+    padding: .2rem 1rem;
+    color: #e7e7e7;
+}
+
+
+
+@keyframes nav {
+    0% {
+        -webkit-transform: scaleY(0.4);
+        transform: scaleY(0.4);
+        
+    }
+
+    100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+    }
+}
