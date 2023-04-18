@@ -1,0 +1,179 @@
+$primary-white: #ffffff;
+$primary-green: #539e49;
+
+.card {
+  box-shadow: 0px 2px 12px 0px rgba(43, 43, 43, 0.31);
+  padding: 0 0 0.8rem 0;
+  position: relative;
+  height: 603px;
+  min-height: 603px;
+  max-height: 603px;
+  .card_info {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 20;
+
+    .info_status {
+      background-color: #c50841;
+      padding: 0.1rem 0.5rem;
+      color: $primary-white;
+      text-transform: capitalize;
+      &.alive {
+        background-color: $primary-green;
+        padding: 0.1rem 0.5rem;
+        color: $primary-white;
+        text-transform: capitalize;
+      }
+    }
+    .info_gender {
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 2px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      padding: 0 0.5rem;
+      color: #333333;
+      text-transform: capitalize;
+      font-weight: 500;
+      font-size: 14px;
+    }
+  }
+
+  .card_fig {
+    margin: 0;
+    height: 400px;
+    position: relative;
+    z-index: 10;
+
+    .card_img {
+      width: 100%;
+      object-fit: cover;
+      height: 400px;
+      max-height: 400px;
+    }
+
+    .card_created {
+      display: block;
+      margin-bottom: 0.5rem;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      font-size: 0.7rem;
+      padding-left: 0.3rem;
+      color: #252525;
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 2px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+    }
+  }
+
+  .card_body {
+    border-top: 2px solid $primary-green;
+    padding: 0.4rem;
+    position: relative;
+
+    &.died {
+      border-top: 2px solid #c50841;
+    }
+
+    .body_info {
+      position: absolute;
+      right: 1rem;
+      height: 12px;
+      width: 12px;
+      cursor: pointer;
+    }
+
+    .card_name {
+      margin: 1rem;
+      text-transform: capitalize;
+      font-size: clamp(1.5rem, 2rem, 2.1rem);
+    }
+
+    .card_gender {
+      font-size: clamp(1rem, 1.3rem, 1.4rem);
+    }
+
+    .card_cta {
+      color: $primary-green;
+      text-transform: capitalize;
+      font-weight: 500;
+    }
+  }
+
+  .card_back {
+    display: none;
+
+    &.active {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #333333;
+      display: block;
+      position: absolute;
+      top: 0;
+      max-height: 603px;
+      z-index: 40;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: active_cardback 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    }
+
+    .back_title {
+      margin: 0.5rem 0;
+      color: $primary-white;
+    }
+
+    .card_type {
+      color: #ce7832;
+      font-size: 14px;
+    }
+
+    .card_origin,
+    .card_location {
+      color: $primary-green;
+      margin: 0.6rem 0;
+    }
+
+    .back_episode_ol {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+      max-height: calc(40%);
+      overflow: hidden;
+
+      &::before {
+        content: ´ver mas episodios´;
+        position: absolute;
+        color: #fff;
+      }
+
+      .back_episode_li {
+        padding: 0;
+        margin: 0;
+        display: block;
+
+        .episode_link {
+          color: $primary-green;
+        }
+      }
+    }
+  }
+
+  @keyframes active_cardback {
+    0% {
+      -webkit-transform: scaleY(0.4);
+      transform: scaleY(0.4);
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+    }
+  }
+}
