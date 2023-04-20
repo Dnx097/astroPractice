@@ -81,9 +81,13 @@ $primary-green: #539e49;
     .body_info {
       position: absolute;
       right: 1rem;
-      height: 12px;
-      width: 12px;
+      height: 19px;
+      width: 19px;
       cursor: pointer;
+
+      svg {
+        pointer-events: none;
+      }
     }
 
     .card_name {
@@ -93,10 +97,13 @@ $primary-green: #539e49;
     }
 
     .card_gender {
+      margin: 0.5rem 1rem;
       font-size: clamp(1rem, 1.3rem, 1.4rem);
     }
 
     .card_cta {
+      display: inline-block;
+      margin: 1rem 1rem;
       color: $primary-green;
       text-transform: capitalize;
       font-weight: 500;
@@ -121,6 +128,17 @@ $primary-green: #539e49;
       align-items: center;
       justify-content: center;
       animation: active_cardback 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    }
+
+    .back_close {
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      svg {
+        pointer-events: none;
+      }
     }
 
     .back_title {
